@@ -9,8 +9,8 @@
 ## 🛠️ Installation
 As for now, **Luanite** only supports Linux - but it will support Windows in the near future. There are 2 main methods to install Luanite.
 
-:one: **First Method**: you can easily install Luanite by going to the "Releases" page of this repository and installing Luanite's executable file. Afterwards, put it wherever you like on your machine and remember to put it in **PATH**.
-
+:one: **First Method**: you can easily install Luanite by going to the "Releases" page of this repository and installing Luanite's executable file. Afterwards, put it wherever you like on your machine and remember to put it in **PATH**. As for now, a prebuilt executable is only available for `x86_64` architecture.
+ 
 :two: **Second Method**: if you don't trust my executable for whatever reason or would like to create it yourself, you can clone the `luanite.lua` file from this repository - that's where all of Luanite's code lies. Afterwards, you can just execute it with the **Lua 5.4.6** installation that you already have on your machine by using `lua luanite.lua` or a similar command. You can indeed create an executable of **Luanite** by using **Luanite** - just create a new Luanite project, put luanite's code in the `app/` folder, change up some settings in the `luanite.project` configuration file and build the executable. Now you can enjoy all of Luanite's wonders.
 
 ## ⚙️ Usage
