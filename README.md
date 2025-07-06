@@ -4,7 +4,7 @@
 
 ------
 # Luanite — the project builder for Lua.
-**Luanite** is a project builder for the programming language Lua that is somewhat similar to Rust's `cargo`. It allows to easily bundle your Lua application into a self-contained standalone executable which runs on machines with no Lua installed. Every single Luanite project features its own **Lua 5.4.6** installation built from source — here Luanite takes inspiration from Python's virtual enviroments. Unfortunately, **Luanite** doesn't yet feature all functionality that I want it to have, but we are getting there. Read further to learn more information.
+**Luanite** is a project builder for the programming language Lua that is somewhat similar to Rust's `cargo`. It allows to easily bundle your Lua application into a self-contained standalone executable which runs on machines with no Lua installed. Every single Luanite project features its own **Lua 5.4.6** installation built from source — here Luanite takes inspiration from Python's virtual enviroments. Unfortunately, **Luanite** doesn't yet feature all functionality that I want it to have, like automatic dependency managment and the ability to install packages from Luarocks directly, but we are getting there for sure. Read further to learn more information.
 
 ## 🛠️ Installation
 As for now, **Luanite** only supports Linux - but it will support Windows in the near future. There are 2 main methods to install Luanite.
@@ -32,9 +32,19 @@ root/
 ├── bin/                 # Output folder for the standalone executable after building
 └── luanite/             # Contains Lua 5.4.6, luastatic and other internal tools (do not modify)
 ```
+## 🏗️ Dependencies
+I am always trying to make **Luanite** as dependency-free as possible. At the moment, Luanite has only two dependencies:
+1. A **C Compiler**, for example `gcc`
+2. GNU `make` tool
+
+## ☎️ Community / Contacting the developer / Contributing
+Help is always greatly appreciated - you can use all of Github's features including issues, pull requests and more to contribute to **Luanite**. If you would ever require any assistance regarding **Luanite** or you would just like to join an official **Luanite** community, [we have a discord server.](https://discord.gg/NSK7YJ2R6j). We don't _usually_ speak English there, but we all can and will assist you or just talk to you about whatever you want in English. You can easily contact me as the developer there too.  
 
 ## 📝 Naming
 **Luanite's** name comes from the word "meteorite" being combined with "Lua". The space-ish theme comes from the fact that "Lua" means "Moon". The best way to mention Luanite in a conversation is to use the name `Luanite`. `LUANITE`, `luanite` and others are just more complicated, look uglier than the original version and don't follow the rules specified for the name "Lua" on [Lua's official webpage](https://www.lua.org/about.html) - we also follow those.
+
+## 👨‍⚖️ License
+**Luanite** uses GNU General Public License version 3. For more information, see the `LICENSE` file and use `luanite license` command.
 
 ## ☑️ TO-DO List
 - [ ] Support Windows
