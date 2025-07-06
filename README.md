@@ -1,4 +1,7 @@
-# luanite
-🧩 Luanite – your Lua project, now portable
+<div align="center">
+  <img style="height: 250px;" src="https://raw.githubusercontent.com/tixonochekAscended/luanite/refs/heads/main/LuaniteLogo.png">
+</div>
 
-## An actual description of the project will appear soon 🕐
+------
+<h1>Luanite — the project builder for Lua.</h1>
+...
