@@ -4,7 +4,7 @@
 
 ------
 # Luanite — the project builder for Lua.
-**Luanite** is a project builder for the programming language Lua that is somewhat similar to Rust's `cargo`. It allows to easily bundle your Lua application into a self-contained standalone executable which runs on machines with no Lua installed. Every single Luanite project features its own **Lua 5.4.6** installation built from source — here Luanite takes inspiration from Python's virtual enviroments. Unfortunately, **Luanite** doesn't yet feature all functionality that I want it to have, like automatic dependency managment and the ability to install packages from Luarocks directly, but we are getting there for sure. Read further to learn more information.
+**Luanite** is a project builder for the programming language Lua that is somewhat similar to Rust's `cargo`. It allows to easily bundle your Lua application into a self-contained standalone executable which runs on machines with no Lua installed. Every single Luanite project features its own **Lua 5.4.6** installation built from source — here Luanite takes inspiration from Python's virtual enviroments. Unfortunately, **Luanite** doesn't yet feature all functionality that I want it to have, like automatic dependency managment and the ability to install packages from Luarocks directly, but we are getting there for sure. Read further to learn more information. Also, please remember that **Luanite** is a project that I at first have developed for myself, and will continue to do so no matter what.
 
 ## 🛠️ Installation
 As for now, **Luanite** only supports Linux - but it will support Windows in the near future. There are 2 main methods to install Luanite.
