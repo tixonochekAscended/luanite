@@ -484,7 +484,7 @@ else
 	os.exit(1)
 end
 ]==========]
-local luanite_version = "1.0"
+local luanite_version = "1.1"
 
 local function rm_dir(path)
     os.execute(('rm -rf "%s"'):format(path))
@@ -674,8 +674,8 @@ local function build_proj()
     local conf_path = lroot .. "/luanite.project"
     local config = parse_config(conf_path)
 
-    local proj_name = config.name or "unspecified"
-    local entry = config.entry or "main"
+    local proj_name = config.name .. '-' .. luanite_version
+    local entry = config.entry
 
     local app_dir = lroot .. "/app"
     local luanite_dir = lroot .. "/luanite"
@@ -744,7 +744,8 @@ local callbacks = {
     luanite license - shows information regarding Luanite's license
     luanite init <Directory> - create a new Luanite project in the specified directory, works solely with empty directories
     luanite build - builds a standalone executable, needs to be ran at the root of a Luanite project
-    luanite run - builds a standalone executable and runs it afterwards, needs to be ran at the root of a Luanite project]])
+    luanite run - builds a standalone executable and runs it afterwards, needs to be ran at the root of a Luanite project
+    luanite lua <Optional Arguments> - an interface that allows to talk to the Lua installation that is present in each luanite project, needs to be ran at the root of a Luanite project]])
         :format(luanite_version))
     end,
 
@@ -822,11 +823,42 @@ local callbacks = {
         end
     
         local config = parse_config(lroot .. "/luanite.project")
-        local proj_name = config.name or "unspecified"
+        local proj_name = config.name .. '-' .. config.version
         local bin_path = lroot .. "/bin/" .. proj_name
     
+        local cmd_parts = { bin_path }
+        for i = 2, #arg do
+            table.insert(cmd_parts, arg[i])
+        end
+        
+        local cmd = table.concat(cmd_parts, " ")
+        
         print("Running the executable...\n")
-        os.execute(bin_path)
+        os.execute(cmd)
+    end,
+
+    ['lua'] = function ()
+        local lroot = os.getenv("PWD") or (function()
+            local pipe = io.popen("pwd")
+            local result = pipe:read("*l")
+            pipe:close()
+            return result
+        end)()
+
+        if not is_luanite_root(lroot) then
+            print("Not a valid Luanite project root directory.")
+            os.exit(1)
+        end
+
+        local lua_bin = lroot .. "/luanite/lua-5.4.6/src/lua"
+        
+        local cmd_parts = { lua_bin }
+        for i = 2, #arg do
+            table.insert(cmd_parts, arg[i])
+        end
+        
+        local cmd = table.concat(cmd_parts, " ")
+        os.execute(cmd)
     end
 }
 
