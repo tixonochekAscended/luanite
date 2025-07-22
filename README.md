@@ -14,13 +14,14 @@ As for now, **Luanite** only supports Linux - but it will support Windows in the
 :two: **Second Method**: if you don't trust my executable for whatever reason or would like to create it yourself, you can clone the `luanite.lua` file from this repository - that's where all of Luanite's code lies. Afterwards, you can just execute it with the **Lua 5.4.6** installation that you already have on your machine by using `lua luanite.lua` or a similar command. You can indeed create an executable of **Luanite** by using **Luanite** - just create a new Luanite project, put luanite's code in the `app/` folder, change up some settings in the `luanite.project` configuration file and build the executable. Now you can enjoy all of Luanite's wonders.
 
 ## ⚙️ Usage
-Version `1.0`, which at the moment is the latest version of **Luanite**, features 6 commands:
+Version `1.1`, which at the moment is the latest version of **Luanite**, features 7 commands:
 1. `luanite help` - outputs a list of all available commands
 2. `luanite version` - outputs Luanite's version
 3. `luanite license` - outputs information regarding Luanite's one and only license - which is of course the GNU General Public License v3.0.
 4. `luanite init <Directory>` - creates a new _Luanite project_ in the directory provided by the user. A project **can't be initialized** in a non-empty directory (directories that don't exist yet are completely fine - Luanite will create them for you). At the moment requires an internet connection to download Lua 5.4.6's tarball - will probably be changed in the next versions.
 5. `luanite build` - builds a self-contained, standalone executable. This command bundles **all** Lua files in the `app/` directory inside of your Luanite project - even the ones that aren't `require()`'d by any other file. The name of the built executable and the entry point of the program are all based on the values that are stored inside of the `luanite.project` configuration file. Needs to be ran from the `root/` of a Luanite project.
 6. `luanite run` - does the same thing as `luanite build` but runs the built executable afterwards. Needs to be ran from the `root/` of a Luanite project.
+7. `luanite lua <Optional Arguments>` - an interface that allows to talk to the Lua 5.4.6 installation that is present inside of each Luanite project. Needs to be ran at the root of a Luanite project. 
 
 ## 📂 Structure of a Luanite project
 Upon creating a new Luanite project via `luanite init ...`, you are going to see this kind of filetree appear at the `root/` of your new project:
@@ -49,10 +50,11 @@ Help is always greatly appreciated - you can use all of Github's features includ
 ## ☑️ TO-DO List
 - [ ] Support Windows
 - [ ] Support cross-compilation to Windows from Linux
-- [ ] Create a `luanite lua` command as an interface for talking to the Lua 5.4.6 contained in every Luanite project (for this whole virtual-enviroment functionality to become much more useful)
+- [x] Create a `luanite lua` command as an interface for talking to the Lua 5.4.6 contained in every Luanite project (for this whole virtual-enviroment functionality to become much more useful)
 - [ ] Think on how to make `luanite init` not depend on an internet connection to work
 - [ ] Improve the bundling system (bundle only the files that are `require()`'d by other files instead of bundling everything)
 - [ ] Allow to install packages/libraries from Luarocks directly and additionaly automatically bundle them into the standalone executable
+- [ ] Add some libraries for doing filesystem, json and networking stuff out of the box.
 
 ## ©️ Credits
 This project wouldn't be possible without [luastatic](https://github.com/ers35/luastatic).
