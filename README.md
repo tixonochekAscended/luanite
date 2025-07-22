@@ -20,7 +20,7 @@ Version `1.1`, which at the moment is the latest version of **Luanite**, feature
 3. `luanite license` - outputs information regarding Luanite's one and only license - which is of course the GNU General Public License v3.0.
 4. `luanite init <Directory>` - creates a new _Luanite project_ in the directory provided by the user. A project **can't be initialized** in a non-empty directory (directories that don't exist yet are completely fine - Luanite will create them for you). At the moment requires an internet connection to download Lua 5.4.6's tarball - will probably be changed in the next versions.
 5. `luanite build` - builds a self-contained, standalone executable. This command bundles **all** Lua files in the `app/` directory inside of your Luanite project - even the ones that aren't `require()`'d by any other file. The name of the built executable and the entry point of the program are all based on the values that are stored inside of the `luanite.project` configuration file. Needs to be ran from the `root/` of a Luanite project.
-6. `luanite run` - does the same thing as `luanite build` but runs the built executable afterwards. Needs to be ran from the `root/` of a Luanite project.
+6. `luanite run <Optional Arguments>` - does the same thing as `luanite build` but runs the built executable afterwards with the optional arguments redirected to it. Needs to be ran from the `root/` of a Luanite project.
 7. `luanite lua <Optional Arguments>` - an interface that allows to talk to the Lua 5.4.6 installation that is present inside of each Luanite project. Needs to be ran at the root of a Luanite project. 
 
 ## 📂 Structure of a Luanite project
