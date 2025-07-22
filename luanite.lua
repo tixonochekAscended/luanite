@@ -674,7 +674,7 @@ local function build_proj()
     local conf_path = lroot .. "/luanite.project"
     local config = parse_config(conf_path)
 
-    local proj_name = config.name .. '-' .. luanite_version
+    local proj_name = config.name .. '-' .. config.version
     local entry = config.entry
 
     local app_dir = lroot .. "/app"
